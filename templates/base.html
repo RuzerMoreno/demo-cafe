@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="{{ meta_description|default('RM CAFE: café de especialidad, desayunos sin prisa y algo dulce para acompañar.') }}" />
+    <meta name="theme-color" content="#263a31" />
+    <title>RM CAFE — {{ page_title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="wordmark" href="{{ url_for('home') }}" aria-label="RM CAFE, inicio">
+        <span class="wordmark-icon" aria-hidden="true">RM</span>
+        <span>RM<br />CAFE</span>
+      </a>
+      <nav class="primary-links" aria-label="Navegación principal">
+        <a href="{{ url_for('home') }}" {% if active_page == 'home' %}aria-current="page"{% endif %}>Inicio</a>
+        <a href="{{ url_for('menu') }}" {% if active_page == 'menu' %}aria-current="page"{% endif %}>La carta</a>
+        <a href="{{ url_for('story') }}" {% if active_page == 'story' %}aria-current="page"{% endif %}>Nuestra casa</a>
+        <a href="{{ url_for('journal') }}" {% if active_page == 'journal' %}aria-current="page"{% endif %}>Diario</a>
+        <a href="{{ url_for('visit') }}" {% if active_page == 'visit' %}aria-current="page"{% endif %}>Visítanos</a>
+      </nav>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="navigation" id="primary-navigation" aria-label="Menú del sitio" inert>
+        <div class="menu-overlay-inner">
+          <div class="menu-overlay-top">
+            <span>RM CAFE <i>·</i> CANCÚN</span>
+            <span>Un lugar para bajar el ritmo</span>
+          </div>
+          <div class="menu-overlay-main">
+            <div class="menu-overlay-links">
+              <a href="{{ url_for('home') }}" {% if active_page == 'home' %}aria-current="page"{% endif %}><span>01</span> Inicio <b aria-hidden="true">↗</b></a>
+              <a href="{{ url_for('menu') }}" {% if active_page == 'menu' %}aria-current="page"{% endif %}><span>02</span> La carta <b aria-hidden="true">↗</b></a>
+              <a href="{{ url_for('story') }}" {% if active_page == 'story' %}aria-current="page"{% endif %}><span>03</span> Nuestra casa <b aria-hidden="true">↗</b></a>
+              <a href="{{ url_for('journal') }}" {% if active_page == 'journal' %}aria-current="page"{% endif %}><span>04</span> Diario <b aria-hidden="true">↗</b></a>
+              <a href="{{ url_for('visit') }}" {% if active_page == 'visit' %}aria-current="page"{% endif %}><span>05</span> Visítanos <b aria-hidden="true">↗</b></a>
+            </div>
+            <aside class="menu-overlay-details">
+              <p class="eyebrow eyebrow-light"><span></span> Nos encuentras en</p>
+              <p>Centro<br />Cancún, Quintana Roo</p>
+              <a href="https://maps.google.com/?q=Centro+Cancún" target="_blank" rel="noreferrer">Abrir en mapas ↗</a>
+              <p class="overlay-hours">Cada día<br />08:00 — 19:00</p>
+              <a href="tel:+529981234567">+52 998 123 45 67</a>
+            </aside>
+          </div>
+          <div class="menu-overlay-bottom">
+            <span>Café de especialidad · Hecho con calma</span>
+            <a href="https://www.instagram.com/rm.software.solutions/" target="_blank" rel="noreferrer">Instagram ↗</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="contenido">
+      {% block content %}{% endblock %}
+    </main>
+
+    <footer class="site-footer">
+      <a class="footer-wordmark" href="{{ url_for('home') }}">RM CAFE<span>.</span></a>
+      <p>Un café, una pausa, un buen día.</p>
+      <nav class="footer-nav" aria-label="Navegación del pie de página">
+        <a href="{{ url_for('menu') }}">La carta</a>
+        <a href="{{ url_for('story') }}">Nuestra casa</a>
+        <a href="{{ url_for('journal') }}">Diario</a>
+        <a href="{{ url_for('visit') }}">Visítanos</a>
+      </nav>
+      <div class="footer-bottom">
+        <span>© 2026 RM CAFE</span>
+        <a href="https://www.instagram.com/rm.software.solutions/" target="_blank" rel="noreferrer">Instagram ↗</a>
+        <a href="#contenido">Volver arriba ↑</a>
+      </div>
+    </footer>
+    {% block dialogs %}{% endblock %}
+    <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
+  </body>
+</html>

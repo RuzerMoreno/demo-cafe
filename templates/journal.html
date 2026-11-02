@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="page-hero journal-page-hero">
+    <div class="page-hero-image" role="img" aria-label="Café y cuaderno en una mesa junto a la ventana"></div>
+    <div class="page-hero-shade"></div>
+    <div class="page-hero-copy">
+      <p class="eyebrow eyebrow-light"><span></span> Notas desde nuestra mesa</p>
+      <h1>El diario<br /><em>de RM CAFE.</em></h1>
+      <p>Ideas para saborear despacio, conocer lo que servimos y disfrutar más cada visita.</p>
+    </div>
+  </section>
+
+  <section class="journal-section section-wrap">
+    <div class="section-heading journal-heading reveal">
+      <div><p class="eyebrow"><span></span> Historias para acompañar tu café</p><h2>Un poco de<br /><em>inspiración.</em></h2></div>
+      <p class="section-intro">Pequeñas historias sobre café, cocina y esas pausas que nos hacen bien.</p>
+    </div>
+    <div class="journal-grid">
+      <article class="journal-card journal-card-feature reveal">
+        <a href="{{ url_for('story') }}" aria-label="Leer: El camino de la semilla a la taza">
+          <div class="journal-image journal-image-beans" role="img" aria-label="Granos de café recién tostados"></div>
+          <div class="journal-card-content"><span class="journal-meta">CAFÉ · 4 MIN DE LECTURA</span><h3>El camino de la semilla<br />a tu taza.</h3><p>Un buen café empieza mucho antes de llegar a la barra. Te contamos qué buscamos en cada origen.</p><span class="text-link">Conoce nuestra casa <b aria-hidden="true">↗</b></span></div>
+        </a>
+      </article>
+      <article class="journal-card reveal" data-reveal-delay="1">
+        <a href="{{ url_for('menu') }}" aria-label="Leer: La mañana huele a pan recién hecho">
+          <div class="journal-image journal-image-bread" role="img" aria-label="Pan artesanal recién horneado"></div>
+          <div class="journal-card-content"><span class="journal-meta">EN LA COCINA · 3 MIN DE LECTURA</span><h3>La mañana huele<br />a pan recién hecho.</h3><p>La vitrina cambia con la estación y el horno empieza a trabajar antes de abrir la puerta.</p><span class="text-link">Mira la carta <b aria-hidden="true">↗</b></span></div>
+        </a>
+      </article>
+      <article class="journal-card reveal">
+        <a href="{{ url_for('visit') }}" aria-label="Leer: Una pausa también es un buen plan">
+          <div class="journal-image journal-image-table" role="img" aria-label="Tazas de café en una mesa junto a la ventana"></div>
+          <div class="journal-card-content"><span class="journal-meta">VIDA DE BARRIO · 2 MIN DE LECTURA</span><h3>Una pausa también<br />es un buen plan.</h3><p>Un ratito sin notificaciones, algo rico y una mesa cerca de la ventana. Así de sencillo.</p><span class="text-link">Ven a visitarnos <b aria-hidden="true">↗</b></span></div>
+        </a>
+      </article>
+    </div>
+  </section>
+{% endblock %}

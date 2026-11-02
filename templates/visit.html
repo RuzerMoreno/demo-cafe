@@ -1,0 +1,54 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <section class="page-hero visit-page-hero">
+    <div class="page-hero-image" role="img" aria-label="Mesas y café en el interior de RM CAFE"></div>
+    <div class="page-hero-shade"></div>
+    <div class="page-hero-copy">
+      <p class="eyebrow eyebrow-light"><span></span> Tu mesa te espera</p>
+      <h1>Nos vemos<br /><em>en RM CAFE.</em></h1>
+      <p>Estamos en el corazón de Cancún. Pasa cuando quieras; el primer café va por nuestra cuenta.</p>
+      <a class="button button-light" href="https://maps.google.com/?q=Centro+Cancún" target="_blank" rel="noreferrer">Cómo llegar <span aria-hidden="true">↗</span></a>
+    </div>
+  </section>
+
+  <section class="visit-info section-wrap">
+    <div class="visit-info-heading reveal">
+      <p class="eyebrow"><span></span> Aquí empieza tu pausa</p>
+      <h2>Ven como<br /><em>estás.</em></h2>
+    </div>
+    <div class="visit-info-grid">
+      <article class="visit-info-card reveal">
+        <span class="visit-info-icon" aria-hidden="true">⌖</span>
+        <p class="eyebrow">Encuéntranos</p>
+        <h3>En el barrio</h3>
+        <p>Centro<br />Cancún, Quintana Roo</p>
+        <a class="text-link" href="https://maps.google.com/?q=Centro+Cancún" target="_blank" rel="noreferrer">Abrir en mapas <span aria-hidden="true">↗</span></a>
+      </article>
+      <article class="visit-info-card reveal" data-reveal-delay="1">
+        <span class="visit-info-icon" aria-hidden="true">◷</span>
+        <p class="eyebrow">Nuestro horario</p>
+        <h3>Sin prisa, cada día</h3>
+        <p>Lunes a domingo<br />08:00 — 19:00</p>
+        <span class="visit-status"><i aria-hidden="true"></i> Te esperamos hoy</span>
+      </article>
+      <article class="visit-info-card reveal" data-reveal-delay="2">
+        <span class="visit-info-icon" aria-hidden="true">✉</span>
+        <p class="eyebrow">Hablemos</p>
+        <h3>¿Alguna pregunta?</h3>
+        <p>Escríbenos o llámanos<br />antes de tu visita.</p>
+        <a class="text-link" href="tel:+529981234567">+52 998 123 45 67 <span aria-hidden="true">↗</span></a>
+      </article>
+    </div>
+    <p class="demo-disclaimer">Demo.</p>
+  </section>
+
+  <section class="visit-bottom">
+    <div class="visit-bottom-copy">
+      <p class="eyebrow eyebrow-light"><span></span> Algo rico y una mesa tranquila</p>
+      <h2>Te guardamos<br /><em>un sitio.</em></h2>
+      <a class="button button-light" href="{{ url_for('menu') }}">Echa un vistazo a la carta <span aria-hidden="true">↗</span></a>
+    </div>
+    <div class="visit-bottom-image" role="img" aria-label="Un rincón acogedor para tomar café"></div>
+  </section>
+{% endblock %}
